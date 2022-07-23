@@ -7,7 +7,7 @@ public class Destroyer : MonoBehaviour
     public float lifeTime;
     private void Start()
     {
-        Destroy(gameObject, lifeTime);       
+        Destroy(gameObject, lifeTime);
     }
 
 }

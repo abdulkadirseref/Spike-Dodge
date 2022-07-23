@@ -61,41 +61,34 @@ public class GameManager2 : MonoBehaviour
 
     void IncreaseSpeed()
     {
-        if (timeCount > 10 && timeCount < 12)
+        switch (timeCount)
         {
+            case 1... 10
+                spikeTop.speed = 5;
+                spikeBot.speed = 5;
+                break;
+            case 10... 12
             spawn.SetActive(false);
-        }
-        if (timeCount > 12 && timeCount < 22)
-        {
-            spikeBot.speed = 7;
-            spikeTop.speed = 7;
-            spawn.SetActive(true);
-        }
-        if (timeCount > 22 && timeCount < 24)
-        {
-            spawn.SetActive(false);
-        }
-        if (timeCount > 24 && timeCount < 35)
-        {
-            spikeBot.speed = 10;
-            spikeTop.speed = 10;
-            spawn.SetActive(true);
-        }
-        if (timeCount > 35 && timeCount < 37)
-        {
-            spawn.SetActive(false);
-        }
-        if (timeCount > 37)
-        {
-            spikeTop.speed = 15;
-            spikeBot.speed = 15;
-            spawn.SetActive(true);
-        }
-
-        if (timeCount <= 10)
-        {
-            spikeTop.speed = 5;
-            spikeBot.speed = 5;
+                break;
+            case 12... 22
+                spikeBot.speed = 7;
+                spikeTop.speed = 7;
+                spawn.SetActive(true);
+                break;
+            case 22... 24
+                spawn.SetActive(false);
+                break;
+            case 24... 35
+                spikeBot.speed = 10;
+                spikeTop.speed = 10;
+                spawn.SetActive(true);
+                break;
+            case 35... 37
+                    spawn.SetActive(false);
+                break;
+            default:
+                spikeBot.speed = 5;
+                spikeTop.speed = 5;
+                break;
         }
     }
-}
